@@ -1,36 +1,40 @@
 #include <windows.h>
 #include <string>
-#include // для функции isdigit
+#include <iostream>
+#include <cctype>
 
 using namespace std;
 
 int main() {
-setlocale(LC_ALL, "ru_RU");
-SetConsoleCP(1251);
-SetConsoleOutputCP(1251);
-string str;
-cout << "Введите строку: ";
-getline(cin, str);
+    setlocale(LC_ALL, "ru_RU");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    string str;
+    cout << "Введите строку: ";
+    getline(cin, str);
 
-int lc = 0;
-int dc = 0;
+    int lc = 0;
+    int dc = 0;
 
-for (char ch : str) {
-    if (isdigit(ch)) {
-        dc++;
-    } else if (isalpha(ch)) {
-        lc++;
+    for (char ch : str) {
+        if (isdigit(ch)) {
+            dc++;
+        }
+        else if (isalpha(ch)) {
+            lc++;
+        }
     }
-}
 
-if (dc > lc) {
-    cout << "В строке больше цифр" << endl;
-} else if (dc < lc) {
-    cout << "В строке больше букв" << endl;
-} else {
-    cout << "Количество цифр и букв в строке равно" << endl;
-}
+    if (dc > lc) {
+        cout << "В строке больше цифр" << endl;
+    }
+    else if (dc < lc) {
+        cout << "В строке больше букв" << endl;
+    }
+    else {
+        cout << "Количество цифр и букв в строке равно" << endl;
+    }
 
-return 0
+    return 0;
 
 }
