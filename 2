@@ -12,6 +12,7 @@ int main() {
     string str;
     cout << "Введите строку: ";
     getline(cin, str);
+    str = "йцукенгшщзхъфывапролдячсмить";
 
     int lc = 0;
     int dc = 0;
@@ -20,7 +21,7 @@ int main() {
         if (isdigit(ch)) {
             dc++;
         }
-        else if (isalpha(ch)) {
+        else if (isalpha(ch) || str.find(ch) != -1) {
             lc++;
         }
     }
