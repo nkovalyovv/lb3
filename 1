@@ -14,7 +14,7 @@ int main() {
 	cout << "Введите строку с разделенными пробелами словами: ";
 	getline(cin, input);
 
-	vector<string> words;
+	vector<string> words; //динамический массив
 	string word;
 	for (char c : input) {
 		if (c != ' ') {
@@ -45,7 +45,7 @@ int main() {
 			}
 		}
 
-		double ratio = static_cast<double>(countA + countC) / word.length();
+		double ratio = static_cast<double>(countA + countC) / word.length(); //процентное соотношение формула
 
 		if (ratio > maxRatio) {
 			maxRatio = ratio;
@@ -62,7 +62,7 @@ int main() {
 		cout << word << " ";
 	}
 	cout << endl;
-	
+
 	system("pause");
 	return 0;
 
